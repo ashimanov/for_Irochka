@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        "use strict";
+        
+        let age,
+            yearOfBirth,
+            currentYear,
+            message;
+    
+        currentYear = 2022;
+    
+        function myFunction1() {
+        
+        yearOfBirth = prompt("Введи год своего рождения.");
+
+        age = currentYear - yearOfBirth;
+    
+        message = (age < 0) ? `В соответствии с введенными данными твой возраст отрицательный (${age}). Ты еще видимо в маме или в папе. Как там? И еще. Ты выглядишь значительно старше своего возраста.` :
+            (age < 1) ? `Ты ошиблась, тебе не может быть ${age} лет!` :
+            (age < 2) ? `Хочешь сказать тебе ${age} год и у тебя трое детей? Постыдилась бы, врунишка!` :
+            (age < 5) ? `Хочешь сказать тебе ${age} года и у тебя трое детей? Постыдилась бы, врунишка!` :
+            (age < 18) ? `Хочешь сказать тебе ${age} лет и у тебя трое детей? Постыдилась бы, врунишка!` :
+            (age < 21) ? `Прекрасно выглядишь в свои ${age} лет!` :
+            (age < 40) ? `${age}? А больше 20 не дашь! Красотка!` :
+            (age < 60) ? `Наверное у тебя вообще нет стресса и крем импортный. Сучка. ${age} это не надолго, запомни! Где ${age} там и ${age + 10}.` :
+            `Тебе ${age}?! Твой пластический хирург должно быть работает над тобой круглые сутки!`;
+        
+            alert(message);
+        }
+
+    </script>
+
+    <button onclick="myFunction1()">Нажми меня!</button>
+
+    
+
+
+    
+</body>
+</html>
