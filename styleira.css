@@ -6,7 +6,24 @@
 
 body {
     padding: 5px;
-    background-color: antiquewhite;
+    background-color: lightgray;
+}
+
+.a-links {
+    text-decoration: none;
+    text-align: center;
+    
+    height: 100%;
+    width: 100%;
+}
+
+.link-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    line-height: 50px;
+    background-color: bisque;
 }
 
 h1 {
