@@ -1,63 +1,714 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/222.css">
     <title>Document</title>
 </head>
 <body>
+    <script>
+    function Calculate() {
+        var TotalProductionTime = document.getElementById("TotalProductionTime").value;
+        var TotalProductionTimeInMinutes = TotalProductionTime * 60;
+        var Breaks = document.getElementById("Breaks").value;
+        var Malfunctions = document.getElementById("Malfunctions").value;
+        var TheoreticalProductionTime = TotalProductionTimeInMinutes - Breaks - Malfunctions;
+    
+        document.getElementById("test").innerHTML = TheoreticalProductionTime;
+    }
+</script>
+
+<form id="frm1" action="Calculate.html">
+    <table width="350px" border="1px">
+        <tr>
+            <th colspan="2">Availability</th>
+        </tr>
+        <tr>
+            <td>Total Production Time</td>
+            <td>
+                <input type="number" id="TotalProductionTime" placeholder="">hours</td>
+        </tr>
+        <tr>
+            <td>Breaks</td>
+            <td>
+                <input type="number" id="Breaks" placeholder="">minutes</td>
+        </tr>
+        <tr>
+            <td>Malfunctions</td>
+            <td>
+                <input type="number" id="Malfunctions" placeholder="">minutes</td>
+        </tr>
+        <tr>
+            <td>Theoretical production time:</td>
+            <td>
+                <p id="test"></p>
+            </td>
+        </tr>
+    </table>
+    <input type="button" onclick="Calculate()" value="calculate">
+</form>
+
+
+<form>
+
+    <dl>
+    <dt><label for="name">What's your name?</label></dt>
+    <dd><input type="text" id="name" name="name"></dd>
+    <dt><label for="email">You email addy</label></dt>
+    <dd><input type="email" id="email" name="email"></dd>
+    <dt><label for="tel">Telephone number</label></dt>
+    <dd><input type="tel" id="tel" name="telephone"></dd>
+    <dt>Favourite colour</dt>
+    <dd>
+        <ul>
+        <li><label><input type="radio" name="color" value="Red"> Red</label></li>
+        <li><label><input type="radio" name="color" value="Green"> Green</label></li>
+        <li><label><input type="radio" name="color" value="Blue"> Blue</label></li>
+        </ul>
+    </dd>
+    </dl>
+    
+    </form>
+
+
 
 
 <script>
     "use strict";
-    
-    let age,
-        yearOfBirth,
-        currentYear,
-        message;
 
-    currentYear = 2022;
 
-    // yearOfBirth = prompt("Enter your year of birth please.");
+    // let ladder = {
+    //     step: 0,
+    //     up() {this.step++; return this;},
+    //     down() {this.step--; return this;},
+    //     showStep() {alert(this.step);},
+    // };
 
-    age = currentYear - yearOfBirth;
+    // ladder.up().up().up().up().down().showStep();
 
-    // alert(`You are ${age} years old.`);
-    // alert("You're old dude!");
 
-    // if (age < 18) {
-    //     alert(`Your age is under 18 (you're ${age} years old), you are not allowed to use this site.`);
-    // } else {
-    //     alert("Welcome to our site!");
+    // let calculator = {
+    //     read() {
+    //         this.firstNumber = +prompt("Enter the 1st number please.", "");
+    //         this.secondNumber = +prompt("Enter the 2nd number please.", "");
+    //     },
+    //     sum() {return this.firstNumber + this.secondNumber},
+    //     mul() {return this.firstNumber * this.secondNumber},
     // }
 
-    // message = (age < 18) ? `Your age is under 18 (you're ${age} years old), you are not allowed to use this site.` :
-    //     (age == 18) ? "Perfect!" :
-    //     "Welcome to our site grandma!";
+    // calculator.read();
+    // alert(calculator.sum());
+    // alert(calculator.mul());
+
+
+    // let x = prompt("Enter 1st number", "");
+    // let y = prompt("Enter 2nd number", "");
+
+    // function mult() {
+    //     return x * y;
+    // }
+
+    // alert(mult());
+
+
+
+
+    // let calculator = {
+    //     read() {
+    //         this.firstNumber = +prompt("Enter the first number.", "");
+    //         this.secondNumber = +prompt("Enter the second number.", "");
+    //     },
+    //     sum() {return this.firstNumber + this.secondNumber},
+    //     mul() {return this.firstNumber * this.secondNumber},
+    // }
+
+    // calculator.read();
+    // alert(calculator.sum());
+    // alert(calculator.mul());
+
+
+
+
+
+
+    // let obj, method;
+
+    // obj = {
+    //     go: function() {alert(this);}
+    // };
+
+    // obj.go();
+
+    // (obj.go)();
+
+    // (method = obj.go)();
+
+    // (obj.go || obj.stop)();
+
+    // let user = {
+    //     name: "John",
+    //     go: function() {alert(this.name)}
+    // };
+
+    // (user.go)();
+
+
+    // let user = {
+    //     name: "John",
+    //     age: 30,
+    //     hi() {alert(this.name)},
+    //     bye() {alert("Bye!")},
+    // }
+
+    // user.bye();
+
+    // let sayHello = function() {
+    //     alert(this);
+    // }
+
+    // sayHello();
+
+
+    // let user = {
+    //     name: "Alex",
+    //     age: 43,
+    //     hobby: "fishing",
+    //     sayHi() {
+    //         alert(`Hi all!!! This is ${this.name} and I'm back to ${this.hobby}!`)
+    //     },
+    // }
+
+    // user.sayHi();
+
+
+    // function marry(man, woman) {
+    //     woman.husband = man;
+    //     man.wife = woman;
+
+    //     return {
+    //         father: man,
+    //         mother: woman
+    //     }
+    // }
+
+    // let family = marry({
+    //     name: "John"
+    // }, {
+    //     name: "Ann"
+    // });
+
     
-    //     alert(message);
 
-    // let jsName = prompt("Какое официальное название JavaScript?", "");
 
-    // (jsName == "ECMAScript") ? alert("Верно!") :
-    //     alert('Не знаете? "ECMAScript"!');
 
-    let messageTest = (login == "Сотрудник") ? "Привет" :
-        (login == "Директор") ? "Здравствуйте" :
-        (login == "") ? "Нет логина" :
-        "";
+//     function deepCopy(newObj, oldObj){
+
+//         for(let prop in oldObj){
+
+//             if(typeof oldObj[prop] == "object" && oldObj[prop] !== null) {
+//                 newObj[prop] = {};
+//                 deepCopy(newObj[prop], oldObj[prop]);
+//                 } else {
+//             newObj[prop] = oldObj[prop];
+//         }
+//     }
+// }
+
+
+
+
+    // let menu = {
+    //     width: 200,
+    //     height: 300,
+    //     title: "My menu",
+    // }
+
+    // function multiplyNumeric(obj) {
+    //     for (let key in obj) {
+    //         if (typeof obj[key] == "number") obj[key] *= 3;
+    //     }
+    // }
+
+    // multiplyNumeric(menu);
+    // console.log(menu.width);
+    // console.log(menu.height);
+    // console.log(menu.title);
+    // console.log(typeof menu.width);
+    // console.log(typeof menu.height);
+    // console.log(typeof menu.title);
+    // console.log(typeof multiplyNumeric);
+    // console.log(typeof menu);
+
+
+    // let salaries = {
+    //     John: 100,
+    //     Matt: 130,
+    //     Alex: 200,
+    // }
+
+    // let sum = 0;
+    // for (let key in salaries) {
+    //     sum += salaries[key];
+    // }
+
+    // console.log(sum);
+
+
+
+
+    // let schedule = {};
+
+    // alert(isEmpty(schedule));
+
+    // schedule["8:30"] = "get up";
+    // schedule["9:30"] = "get up";
+    // schedule["10:30"] = "get up";
+    // schedule["11:30"] = "get up";
+    // schedule["12:30"] = "get up";
+
+    // alert(isEmpty(schedule));
+
+    // function isEmpty(func) {
+    //     for (let key in func) {
+    //         return false;
+    //     } return true;
+    // }
+
+
+
+    // let user = new Object();
+    // let user = {};
+
+    // user.name = "John";
+    // user.surname = "Smith";
+    // user.name = "Pete";
+    // delete user.name;
+
+
+    // let codes = {
+    //     "49": "Германия",
+    //     "41": "Швейцария",
+    //     "44": "Великобритания",
+    //     "1": "США",
+    // };
+
+    // console.log(44 in codes);
+
+
+
+    // let house = {
+    //     walls: 4,
+    //     windows: 6,
+    //     doors: 2,
+    // }
+
+    // let brick = "walls";
+
+    // for (let key in house) {
+    //     console.log(key + " " + house[key]);
+    // }
+
+
+
+    // let name = prompt("Enter your first type of data:", "");
+    // let nameValue = prompt("Enter your first data value:", "");
+    // let age = prompt("Enter your second type of data:", "");
+    // let ageValue = prompt("Enter your second data value:", "");
+    // let hobby = prompt("Enter your third type of data:", "");
+    // let hobbyValue = prompt("Enter your third data value:", "");
+    
+
+    // let user = {
+    //     ["first " + name]: [nameValue],
+    //     ["last " + age]: [ageValue],
+    //     ["middle " + hobby]: [hobbyValue],
+    // }
+
+    // console.log(Object.keys(user));
+
+    // for (let key in user) {
+    //     // alert(user[key]);
+    //     console.log("key: " + key + ": " + user[key]);
+    // }
+
+
+
+
+    // let salePrice = {
+    //     originalPrice: 100,
+    //     discountedPrice: 90,
+    //     loyalCustomerPrice: 80,
+    //     bestPrice: "Our best price.",
+    //     "cash price": 70,
+    // }
+
+    // let hardCashPrice = "cash price";
+
+    // salePrice.petPrice = 50;
+    // salePrice.discount = true;
+    // delete salePrice.discountedPrice;
+
+    // let showPrice = (salePrice.discount) ? salePrice[hardCashPrice] : salePrice.originalPrice;
+
+    // alert(showPrice);
+
+
+
+
+
+
+    // let menu = {
+    //     width: 200,
+    //     height: 300,
+    //     title: "My menu"
+    // };
+
+    // multiplyNumeric(menu);
+
+    // function multiplyNumeric(obj) {
+    //     let x = 3;
+    //     for (let key in obj) {
+    //         if (typeof obj[key] !== "number") {
+    //             continue;
+    //         } else {
+    //             obj[key] *= x;
+    //         }
+    //     }
+    // }
+
+    // alert(menu.width);
+    // alert(menu.height);
+    // alert(menu.title);
+
+
+
+
+
+
+    // let salaries = {
+    //     John: 100,
+    //     Alex: 160,
+    //     Pete: 130,
+    // };
+
+    // let sum = 0;
+
+    // for (let member in salaries) {
+    //     sum += salaries[member];
+    // }
+
+    // alert(sum);
+
+
+    // let user = {};
+    // user.name = "John";
+    // user.surname = "Smith";
+    // user.name = "Pete";
+    // delete user.name;
+
+// let user = {
+//     name: "Alex",
+//     age: 43,
+//     hobby: "fishing",
+//     isAdmin: true,
+// };
+
+// for (let data in user) {
+//     alert(data);
+//     alert(user[data]);
+// }
+
+//     describe("pow", function() {
+
+// it("возводит в степень n", function() {
+//   assert.equal(pow(2, 3), 8);
+// });
+
+// });
+
+//  for (let i = 0; i < 4; i++) {
+//      console.log("value,", i);
+//  }
+
+
+
+//     let text = "";
+// for (let i = 0; i < 10; i++) {
+//   if (i === 3) { break; }
+//   text += "The number is " + i + "<br>";
+// }
+
+//     let userName = prompt("Введите имя", "Алиса");
+// let isTeaWanted = confirm("Вы хотите чаю?");
+
+// alert( "Посетитель: " + userName ); // Алиса
+// alert( "Чай: " + isTeaWanted ); // true
+
+    // function ask(question, yes, no) {
+    //     (confirm(question)) ?
+    //     yes() :
+    //     no();
+    // };
+
+    // ask(
+    //     "Do you agree?",
+    //     () => {alert("You have agreed.");},
+    //     () => {alert("You have declined.");}
+    // );
+
+
+    // let age = prompt("How old are you?");
+
+    // let welcome = (age > 18) ?
+    //     function() {alert("Welcome sir.")} :
+    //     function() {alert("Hey!")};
+
+    // welcome();
+
+
+
+    // function ask(question, yes, no) {
+    //     if (confirm(question)) yes();
+    //     else no();
+    // }
+
+    // ask(
+    //     "Are you 18?",
+    //     function() {alert("Welcome!");},
+    //     function() {alert("You need to be 18 to proceed.");}
+    // )
+
+
+    // function ask(question, yes, no) {
+    //     (confirm(question)) ? yes(): no();
+    // }
+
+    // function showOk() {
+    //     alert("Welcome!");
+    // }
+
+    // function showNo() {
+    //     alert("You need to be 18 to use our site!");
+    // }
+
+    // ask("Are you 18 or older?", showOk, showNo);
+
+
+    // function sumUp(a, b) {
+    //     return a + b;
+    // }
+
+    // let total = sumUp(2, 11);
+
+    // alert(total);
+
+
+
+
+    // function ask(question, yes, no) {
+    //     (confirm(question)) ? yes() : no();
+    // }
+
+    // function showOk() {
+    //     alert("You clicked OK.");
+    // }
+
+    // function showCancel() {
+    //     alert("You cancelled.");
+    // }
+
+    // ask("Do you agree?", showOk, showCancel);
 
     
-    
-    111
 
-        
+    
+
+    // function showPrimes(n) {
+    //     for(let x =2; x < n; x++) {
+    //         if(isPrime(x)) {
+    //             alert(`Found one: ${x}!!!`);
+    //         } else {
+    //             continue;
+    //         }
+    //     }
+    // }
+
+
+    // function isPrime(p) {
+    //     for(let y = 2; y < p; y++) {
+    //         if(p % y == 0) return false;
+    //     } return true;
+    // }
+
+    // showPrimes(20);
+
+
+
+
+    // function showPrimes(n) {
+    //     nextPrime: for (let i = 2; i <= n; i++) {
+    //                 for (let j = 2; j < i; j++) {
+    //                     if (i % j == 0) {
+    //                         continue nextPrime;
+    //                     }
+                          
+    //             } alert(`Found a prime number: ${i}`);
+    //         }
+    //     }
+    
+
+    // showPrimes(10);
+
+    // function ageCheck(age) {
+    //     if(age >= 18) {
+    //         return true;
+    //     } else {
+    //         return confirm("Have your parents allowed this?");
+    //     }
+    // }
+
+    // let age = prompt("Enter your age please.");
+    // // if (ageCheck(age)) {
+    // //     alert("Access granted.")
+    // // } else {
+    // //     alert("Access denied.");
+    // // }
+
+    // function showMovie() {
+    //     if(!ageCheck(age)) {
+    //         return;
+    //     } else {
+    //         alert("You are watching movie: Star Trek.");
+    //     }
+    // }
+
+    // showMovie();
+
+
+
+
+    // function sum(a, b) {
+    //     return a + b;
+    // }
+
+    // alert(sum(1, 2));
+
+
+
+    // function showMessage(from, text) {
+    //     if (!text) {
+    //         text = "no text."
+    //     }
+    //     from = "*" + from + "*";
+    //     alert(from + ": " + text);
+    // }
+
+    // let from = "Anya";
+
+    // showMessage(from, "Hey!");
+    // showMessage(from, "How are you?");
+    // alert(from);
+
+
+// let userName = "Alex";
+
+// function showMessage() {
+//     let userName = "Bob";
+//     let message = `Changing userName to ${userName}`;
+//     alert(message);
+// }
+
+// alert(userName);
+
+// showMessage();
+
+// alert(userName);
+
+
+
+// let browser = "111";
+
+// if (browser === "Edge") {
+//     alert("You've got the Edge!");
+// } else if (browser === "Chrome" || browser === "Firefox" || browser === "Safari" || browser === "Opera") {
+//     alert("Okay we support these browsers too");
+// } else {
+//     alert("We hope that this page looks ok!");
+// }
+
+
+
+
+//  let n = 21;
+
+//  nextCycle:
+//  for (let x = 2; x <= n; x++) {
+//      for (let y = 2; y < x; y++) {
+//          if (x % y == 0) {
+//              continue nextCycle;
+//          }
+//      } alert(`Found a simple number ${x}`);
+//  }
+
+
+
+
+
+    // let x = 0;
+    // do {
+    //     x = prompt("Please enter a number greater than 100.", "");
+    //     // if(x <= 100) {
+    //     //     alert("Try again please.");
+    //     // }
+    // } while (x <= 100 && x);
+
+    // for (let x = 0; x <= 100;) {
+    //     x = +prompt("Please enter a number greater than 100.");
+    //     if(x <= 100) {
+    //         alert("Try again please.");
+    //     }
+    // }
+
+    
+
+    // for (let x = 0; x <= 100; alert("Try again please.")) {
+    //     x = +prompt("Please enter a number greater than 100.");
+    // }
+
+
+
+
+// let i = 0;
+//     while (i < 3) {
+//         alert(`number ${i++}!`);
+//     }
+
+
+// for (let x = 2; x <= 10; x++) {
+//     if(x % 2 == 0) alert(x);
+// }
+
+    // let firstName = prompt("Введите ваше имя:");
+    // let lastName = prompt("Введите вашу фамилию:");
+    // let nickName = prompt("Введите ваше прозвище:");
+    // let anonName = "Anonymous";
+
+    // let firstNameShown = (firstName ?? "");
+    // let lastNameShown = (lastName ?? "");
+    // let nickNameShown = (nickName ?? "");
+    // let anonNameShown = (firstName ?? lastName ?? nickName ?? anonName);
+
+    // let userName = (((firstName ?? "") + ((firstNameShown !== "" && lastNameShown !== "" || (firstNameShown !== "" && lastNameShown == "" && nickNameShown !== "")) ? "+" : "") + (lastName ?? "") + ((lastNameShown !== "" && nickNameShown !== "") ? "+" : "") + (nickName ?? "")) || anonName);
+    // alert(userName);
+    // alert(((firstName ?? "") + ((firstNameShown !== "" && lastNameShown !== "" || (firstNameShown !== "" && lastNameShown == "" && nickNameShown !== "")) ? "+" : "") + (lastName ?? "") + ((lastNameShown !== "" && nickNameShown !== "") ? "+" : "") + (nickName ?? "")) || anonName);
+    
+    // alert(((firstName ?? "") + (firstName !== "" && firstName !== null && lastName !== "" && lastName !== null || firstName !== "" && firstName !== null && nickName !== "" && nickName !== null ? "+" : "") + (lastName ?? "") + (lastName !== "" && lastName !== null && nickName !== "" && nickName !== null ? "+" : "") + (nickName ?? "")) || anonName);
+
     
 </script>
 
-Hello!
-
+   
 </body>
 </html>

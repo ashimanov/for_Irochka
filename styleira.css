@@ -1,0 +1,51 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 5px;
+    background-color: antiquewhite;
+}
+
+h1 {
+    width: fit-content;
+    margin: 10% auto 0 auto;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.inputs-div {
+    margin-top: 10%;
+}
+
+.left {
+    margin-bottom: 10px;
+}
+
+#result {
+    width: 200px;
+    margin: 2% auto 1% auto;
+}
+
+#result::before {
+    content: "Результат = ";
+}
+
+.buttons-div {
+    margin: 2%;
+    width: fit-content;
+}
+
+.button {
+    padding: 2px;
+    border-style: none;
+    background-color: lightskyblue;
+    margin: 10px;
+    cursor: pointer;
+}

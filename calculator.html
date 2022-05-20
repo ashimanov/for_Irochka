@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleira.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>Калькулятор</h1>
+    </div>
+
+<div class="wrapper">
+    <div class="inputs-div">
+        <form id="calc-form" action="calculator.html">
+            <div class="left">
+                <label for="numberX">Введите Х</label>
+                <input type="number" name="numberX" id="x1">
+            </div>
+            <div class="left">
+                <label for="numberY">Введите Y</label>
+                <input type="number" name="numberY" id="y1">
+            </div>
+            <p id="result"></p>
+        </form>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="buttons-div">
+        <input type="button" for="calculator-form" onclick="calculateAdd()" class="button" value="Сложить">
+        <input type="button" for="calculator-form" onclick="calculateSub()" class="button" value="Вычесть">
+        <input type="button" for="calculator-form" onclick="calculateMul()" class="button" value="Умножить">
+        <input type="button" for="calculator-form" onclick="calculateDiv()" class="button" value="Разделить">
+    </div>
+</div>
+
+
+
+
+
+<span></span>
+
+
+
+<script src="calculator.js"></script>
+    
+</body>
+</html>
